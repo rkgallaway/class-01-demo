@@ -1,23 +1,23 @@
 import React from 'react';
 import Person from './Person.js';
 
+import './Main.css';
+
 class Main extends React.Component {
   render() {
+
+    let peopleArray = this.props.data.map((individual, index) => (
+      <Person
+        key={index}
+        name={individual.name}
+        imageUrl={individual.image}
+      />
+    ));
+
     return (
       <main>
-        <Person 
-          name="Ryan Gallaway" 
-          imageUrl="https://avatars.githubusercontent.com/u/40313258?v=4"
-        />
-        <Person 
-          name="Hambalieu Jallow"
-          imageUrl="https://avatars.githubusercontent.com/u/72369411?v=4"
-        />
-        <Person 
-          name="Josh McCluskey"
-          imageUrl="https://avatars.githubusercontent.com/u/72279987?v=4"
-        />
-      </main>
+        {peopleArray}
+      </main >
     );
   }
 }
