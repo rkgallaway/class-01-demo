@@ -4,7 +4,7 @@ class Header extends React.Component{
   render(){
     return(
       <header>
-        <h1>People of Code 301d81</h1>
+        <h1>People of Code 301d81 {this.props.hearts}</h1>
       </header>
     )
   }

@@ -34,6 +34,7 @@ class Person extends React.Component {
 
 
   render() {
+    // console.log(this.props);
     //ternary:  wtf
     return (
       <article>
@@ -43,11 +44,18 @@ class Person extends React.Component {
           src={this.props.imageUrl}
           alt={this.props.name}
           title={this.props.name}
+          onClick={() => this.props.addHearts(this.props.name)}
         />
 
         <p>{this.state.needsHelp ? 'I Need Help!' : ''}</p>
         <Button variant="info" onClick={this.needsHelp}>Help!</Button>
         <Button variant="success" className="right-button" onClick={this.helpGiven}>Thanks for Help!</Button>
+        <Button 
+          variant="warning" 
+          onClick={() => this.props.handleShowModal(this.props.name)}
+        >
+          ?
+        </Button>
       </article>
     );
   }
